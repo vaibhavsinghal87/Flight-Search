@@ -1,0 +1,18 @@
+<div class="main-content">
+	<h2>FLIGHT SEARCH ENGINE</h2>
+	
+	<div class="left-panel">
+		<flight-search tabs="model.tabs"
+			perform-search="performSearch(searchConfig)">
+		</flight-search>
+		<price-filter slider-updated="sliderUpdated(priceRange)">
+		</price-filter>
+	</div>
+	
+	<div class="right-panel">
+		<flight-details flights="model.data"
+			book-flight="bookFlight(item)">
+		</flight-details>
+	</div>
+	<br style="clear: left;" />
+</div>

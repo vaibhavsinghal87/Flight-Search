@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="FlightSearch">
 	<head>
 		<meta charset="utf-8">
-
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+		
 		<title>Flight Search</title>
 		<meta name="description" content="">
 		<meta name="author" content="vaibhav">
@@ -16,36 +12,42 @@
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		
+		<link rel="stylesheet/less" type="text/css" href="styles/style.less"/>
+		<link rel="stylesheet/less" type="text/css" href="styles/priceFilter.less"/>
+		<link rel="stylesheet/less" type="text/css" href="styles/searchForm.less"/>
+		<link rel="stylesheet/less" type="text/css" href="styles/flightDetail.less"/>
+		<link rel="stylesheet/less" type="text/css" href="../bower_components/angularjs-slider/rzslider.less"/>
+		
+		<script> Less = {env: "development"}; </script>
+		<script src="../bower_components/less/less.min.js"></script>
 	</head>
 
 	<body>
-		<div>
-			<header>
-				<h1>index</h1>
-			</header>
-			<nav>
-				<p>
-					<a href="/">Home</a>
-				</p>
-				<p>
-					<a href="/contact">Contact</a>
-				</p>
-			</nav>
-
-			<div>
-
-			</div>
-
-			<footer>
-				<p>
-					&copy; Copyright  by vaibhav
-				</p>
-			</footer>
+		<div class="content-panel">
+			<div ng-view></div>
 		</div>
 		
+		<!--libs-->
+		<script src="../bower_components/less/less.min.js"></script>
 		<script src="../bower_components/angular/angular.min.js"></script>
 		<script src="../bower_components/angular-route/angular-route.min.js"></script>
+		<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script src="../bower_components/angularjs-slider/rzslider.min.js"></script>
+		<script src="../bower_components/moment/moment.js"></script>
+		<!--libs-->
 		
+		<!--scripts-->
 		<script src="scripts/app.js"></script>
+		<script src="scripts/app.config.js"></script>
+		<script src="scripts/pages/flightSearchEngine/controllers/mainController.js"></script>
+		<script src="scripts/pages/flightSearchEngine/services/flightSearchService.js"></script>
+		<script src="scripts/common/services/currencyFormatter.js"></script>
+		<script src="scripts/common/services/dateFormatter.js"></script>
+		<script src="scripts/common/services/flightSearchConst.js"></script>
+		<script src="scripts/components/flightSearch/directives/flightSearchDirective.js"></script>
+		<script src="scripts/components/flightDetails/directives/flightDetailsDirective.js"></script>
+		<script src="scripts/components/priceFilter/directives/priceFilterDirective.js"></script>
+		<!--scripts-->
 	</body>
 </html>

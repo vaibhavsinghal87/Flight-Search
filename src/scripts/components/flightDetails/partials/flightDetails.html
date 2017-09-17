@@ -1,0 +1,27 @@
+<div class="flight-details">
+	<div class="header">
+		<h2>
+			Pune &gt; Delhi &gt; Pune
+		</h2>
+		<div class="journey-dates">
+			<span class="flight-depart">Depart : 1st Jan 2012</span>
+			<span class="flight-return">Return : 10th Jan 2012</span>
+		</div>	
+	</div>
+	<ul class="flight-listing">
+		<li ng-repeat="item in flights">
+			<span class="price">Rs. {{item.price}}</span>
+			<div class="depart" 
+				ng-if="item.depart">
+				<ng-include src="'scripts/components/flightDetails/partials/sub-details.html'"></ng-include>
+			</div>
+			<div class="return" 
+				ng-if="item.return">
+				<ng-include src="'scripts/components/flightDetails/partials/sub-details.html'"></ng-include>
+			</div>
+			<button ng-click="bookFlight({item: item})">
+				BOOK THIS FLIGHT
+			</button>
+		</li>
+	</ul>
+</div>

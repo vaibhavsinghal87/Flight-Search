@@ -1,0 +1,32 @@
+<div class="search-form">
+	<ul class='nav-tabs'>
+		<li ng-repeat="tab in model.tabs"
+			ng-click="select(tab)">
+			<a href="javascript:void(0)">{{tab.title}}</a>
+		</li>
+	</ul>
+	
+	<form class="form-group">
+		<input type="text" ng-model="model.origin" placeholder="ENTER ORIGIN CITY"/>
+		<input type="text" ng-model="model.destination" placeholder="ENTER DESTINATION CITY"/>
+		
+		<input type="text" 
+			ng-model="departDate" 
+			is-opened="opened" 
+			datepicker-popup="dd-MM-yy"/>
+		<input ng-if="model.showReturnDate" 
+			type="text" 
+			ng-model="returnDate" 
+			is-opened="opened" 
+			datepicker-popup="dd-MM-yy"/>
+		
+		<select ng-model="model.passengerCount"
+			ng-options="num for num in model.passengerDropdown track by num">
+			<option value="">PASSENGERS</option>
+		</select>
+		
+		<button type="submit" ng-click="searchClickHandler()">
+			SEARCH
+		</button>
+	</form>
+</div>
