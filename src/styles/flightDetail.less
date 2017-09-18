@@ -16,12 +16,18 @@
         }
     }	
     .flight-listing{
+          background-color: #f3f3f3;
             border-top: 1px solid;
             clear: both;
             padding: 10px;
             
             li{
-                background-color: '#e4e4e4';
+              &:nth-child(odd){
+                background-color: #dcdcdc;
+              }
+              &:nth-child(odd){
+                background-color: #e4e4e4;
+              }
                 margin: 0 auto;
                 width: 100%;
                 margin-bottom: 10px;
